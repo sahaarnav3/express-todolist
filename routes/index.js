@@ -6,9 +6,15 @@ const taskListController = require('../controllers/taskList_controller');
 
 console.log('Router Loaded');
 
+
 router.get('/', homeController.home);
+router.post('/login-user', homeController.loginUser);
 router.get('/create-user', signupUserController.createUser)
 router.post('/create-user', signupUserController.createNewUser)
+router.get('/profile-tasks', taskListController.taskList);
+
+
+//This will open after logging in with respective data of the user logged in..
 router.get('/tasklist', taskListController.taskList);
 
 module.exports = router;
