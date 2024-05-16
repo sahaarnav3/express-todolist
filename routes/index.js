@@ -19,6 +19,8 @@ router.get('/create-user', signupUserController.createUser)
 router.post('/create-user', signupUserController.createNewUser)
 router.get('/profile-tasks', taskListController.taskList);
 router.post('/create-task', taskListController.createTask);
+router.post('/delete-task', taskListController.deleteTask);
+
 router.post('/logout', signupUserController.destroySession);
 
 module.exports = router;
