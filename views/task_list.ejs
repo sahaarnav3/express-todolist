@@ -3,11 +3,13 @@
 
 <!-- <link rel="stylesheet" href="/css/task_list.css"> -->
 
+
 <form action="/create-task" method="POST" class="taskAdd-form" id="taskAdd-form">
     <!-- <input class="home-input" type="email" name="email" placeholder="Please Type Your Email..."  required> -->
     <div class="for-description">
         <label for="description-input">DESCRIPTION</label><br>
-        <input type="text" name="description-input" id="description-input" placeholder="What do you need to do..?" required>
+        <input type="text" name="description-input" id="description-input" placeholder="What do you need to do..?"
+            required>
     </div>
     <div class="for-categoryAndDate">
         <div class="for-category">
@@ -38,7 +40,8 @@
 
 <form action="/delete-task" method="POST" id="taskDelete-form" class="tasks-container">
     <div class="fetched-tasks">
-        <input type="checkbox" id="actual-id-from-db" name="task_id" value="actual-id-from-db" class="per-task-checkbox">
+        <input type="checkbox" id="actual-id-from-db" name="task_id" value="actual-id-from-db"
+            class="per-task-checkbox">
         <div class="per-task-details">
             <h3>some task details Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, dolorum.</h3>
             <h5>🗓️ MAY 15, 2024</h5>
@@ -48,7 +51,8 @@
         </div>
     </div>
     <div class="fetched-tasks">
-        <input type="checkbox" id="actual-id-from-db" name="task_id" value="actual-id-from-db" class="per-task-checkbox">
+        <input type="checkbox" id="actual-id-from-db" name="task_id" value="actual-id-from-db"
+            class="per-task-checkbox">
         <div class="per-task-details">
             <h3>some task details Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, dolorum.</h3>
             <h5>🗓️ MAY 15, 2024</h5>
@@ -58,7 +62,8 @@
         </div>
     </div>
     <div class="fetched-tasks">
-        <input type="checkbox" id="actual-id-from-db" name="task_id" value="actual-id-from-db" class="per-task-checkbox">
+        <input type="checkbox" id="actual-id-from-db" name="task_id" value="actual-id-from-db"
+            class="per-task-checkbox">
         <div class="per-task-details">
             <h3>some task details Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, dolorum.</h3>
             <h5>🗓️ MAY 15, 2024</h5>
@@ -68,7 +73,8 @@
         </div>
     </div>
     <div class="fetched-tasks">
-        <input type="checkbox" id="actual-id-from-db" name="task_id" value="actual-id-from-db" class="per-task-checkbox">
+        <input type="checkbox" id="actual-id-from-db" name="task_id" value="actual-id-from-db"
+            class="per-task-checkbox">
         <div class="per-task-details">
             <h3>some task details Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, dolorum.</h3>
             <h5>🗓️ MAY 15, 2024</h5>
@@ -78,7 +84,8 @@
         </div>
     </div>
     <div class="fetched-tasks">
-        <input type="checkbox" id="actual-id-from-db" name="task_id" value="actual-id-from-db" class="per-task-checkbox">
+        <input type="checkbox" id="actual-id-from-db" name="task_id" value="actual-id-from-db"
+            class="per-task-checkbox">
         <div class="per-task-details">
             <h3>some task details Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, dolorum.</h3>
             <h5>🗓️ MAY 15, 2024</h5>
@@ -88,3 +95,11 @@
         </div>
     </div>
 </form>
+
+<script>
+    const datePicker = document.getElementById('duedate-input');
+    datePicker.addEventListener('click', () => {
+        console.log('Click event triggered!')
+        this.focus();
+    });
+</script>
