@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Noto Sans HK", sans-serif;
+    font-family: "Noto Sans HK", Arial;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
 .main-container {
     background-color: white;
     width: 70vw;
-    height: 90vh;
+    height: 93vh;
     padding: 10px;
 }
 h1 {

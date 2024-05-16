@@ -8,13 +8,15 @@ passport.use(new LocalStrategy({
 async (email, password, done) => {
     try {
         const userData = await User.findOne({email: email});
+        // console.log(userData);
         if(!userData){
             console.log("Error in finding the User -> Passport");
             return done(null, false, {message: "No user with this email, try again"});
         } else if(userData.password !== password){
+            console.log("Entered Wrong Password");
             return done(null, false, {message: "Entered Wrong Password Please, try again"});
         }
-        return userData;
+        return done(null, userData);
     } catch(err) {
         return done(null, false, {message: "Some unknown error occured, please try again"});
     }

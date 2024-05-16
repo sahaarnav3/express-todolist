@@ -1,0 +1,37 @@
+<!-- <h1>Hi <%= email %></h1> -->
+<!-- <h1>Hi <%= locals.user %></h1> -->
+
+<!-- <link rel="stylesheet" href="/css/task_list.css"> -->
+
+<form action="/create-task" method="POST" class="taskAdd-form" id="taskAdd-form">
+    <!-- <input class="home-input" type="email" name="email" placeholder="Please Type Your Email..."  required> -->
+    <div class="for-description">
+        <label for="description-input">DESCRIPTION</label><br>
+        <input type="text" name="description-input" id="description-input" placeholder="What do you need to do..?" required>
+    </div>
+    <div class="for-categoryAndDate">
+        <div class="for-category">
+            <label for="category-input">CATEGORY</label><br>
+            <select id="category-input" name="category-input" aria-label="Default select example">
+                <option>Choose A Category</option>
+                <option selected value="Personal">Personal</option>
+                <option value="Work">Work</option>
+                <option value="School">School</option>
+                <option value="Cleaning">Cleaning</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="for-duedate">
+            <label for="duedate-input">DUE DATE</label><br>
+            <input type="date" id="duedate-input" name="duedate-input" required>
+        </div>
+    </div>
+</form>
+
+<div class="for-buttons">
+    <button form="taskAdd-form" class="taskAdd-form-btn">➕ Add Task</button>
+    <button form="taskDelete-form" class="taskDelete-form-btn">❌ Delete Task</button>
+    <button form="endSession-form" class="taskAdd-form-btn">🔚 Session</button>
+</div>
+
+<form action="/logout" method="POST" id="endSession-form"></form>

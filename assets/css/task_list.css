@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.taskAdd-form label {
+    font-weight: 600;
+}
+
+.for-description {
+    width: 100%;
+    /* background-color: rgb(187, 187, 187); */
+    height: 10vh;
+    padding: 5px 15px;
+    border-bottom: 2px solid rgb(178, 178, 178);
+}
+
+.for-description input {
+    font-size: 15px;
+    padding: 5px 0px;
+    width: 80%;
+    outline: none;
+}
+
+.for-description:hover input {
+    background-color: rgb(227, 227, 227);
+    transition: .1s;
+}
+
+.for-description:hover {
+    background-color: rgb(227, 227, 227);
+    transition: .1s;
+}
+
+.for-categoryAndDate {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.for-categoryAndDate div {
+    border-bottom: 2px solid rgb(178, 178, 178);
+    width: 50%;
+    height: 10vh;
+    padding: 5px 15px;
+}
+.for-categoryAndDate *{
+    outline: none;
+    font-size: 15px;
+}
+
+.for-categoryAndDate:hover {
+    background-color: rgb(227, 227, 227);
+}
+
+.for-categoryAndDate:hover * {
+    background-color: rgb(227, 227, 227);
+}
+
+.for-category {
+    border-right: 2px solid rgb(178, 178, 178);
+}
+
+.for-category select {
+    width: 80%;
+    background-color: white;
+
+}
+
+.for-duedate {
+    border-left: 2px solid rgb(178, 178, 178);
+}
+.for-duedate input {
+    width: 80%;
+}
+
+.for-buttons {
+    border-bottom: 2px solid rgb(178, 178, 178);
+    padding: 20px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.for-buttons * {
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 10px;
+    width: 50%;
+}
+.for-buttons *:hover{
+    scale: 1.04;
+}
+.taskAdd-form-btn {
+    color: #635994;
+    background-color: #cfc8fb;
+    font-weight: 800;
+}
+.taskDelete-form-btn {
+    color: #f92f60;
+    background-color: #ffbbcd;
+    font-weight: 800;
+}

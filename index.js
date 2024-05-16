@@ -7,13 +7,11 @@ const db = require('./config/mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
-const flash = require('express-flash');
 
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static('./assets'));
 app.use(expressLayouts);
-app.use(flash());
 app.use(session({
     name: 'todoapp',
     secret: process.env.SESSION_SECRET,
@@ -32,7 +30,6 @@ app.use(session({
     //     }
     // )
 }));
-
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
