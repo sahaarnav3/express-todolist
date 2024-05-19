@@ -15,8 +15,8 @@
         <div class="for-category">
             <label for="category-input">CATEGORY</label><br>
             <select id="category-input" name="category-input" aria-label="Default select example">
-                <option>Choose A Category</option>
-                <option selected value="Personal">Personal</option>
+                <option selected disabled>Choose A Category</option>
+                <option value="Personal">Personal</option>
                 <option value="Work">Work</option>
                 <option value="School">School</option>
                 <option value="Cleaning">Cleaning</option>
@@ -39,67 +39,21 @@
 <form action="/logout" method="POST" id="endSession-form"></form>
 
 <form action="/delete-task" method="POST" id="taskDelete-form" class="tasks-container">
-    <div class="fetched-tasks">
-        <input type="checkbox" id="actual-id-from-db" name="task_id" value="actual-id-from-db"
-            class="per-task-checkbox">
-        <div class="per-task-details">
-            <h3>some task details Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, dolorum.</h3>
-            <h5>🗓️ MAY 15, 2024</h5>
-        </div>
-        <div class="per-task-category personal">
-            <p>Personal</p>
-        </div>
-    </div>
-    <div class="fetched-tasks">
-        <input type="checkbox" id="actual-id-from-db" name="task_id" value="actual-id-from-db"
-            class="per-task-checkbox">
-        <div class="per-task-details">
-            <h3>some task details Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, dolorum.</h3>
-            <h5>🗓️ MAY 15, 2024</h5>
-        </div>
-        <div class="per-task-category work">
-            <p>Work</p>
-        </div>
-    </div>
-    <div class="fetched-tasks">
-        <input type="checkbox" id="actual-id-from-db" name="task_id" value="actual-id-from-db"
-            class="per-task-checkbox">
-        <div class="per-task-details">
-            <h3>some task details Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, dolorum.</h3>
-            <h5>🗓️ MAY 15, 2024</h5>
-        </div>
-        <div class="per-task-category school">
-            <p>School</p>
-        </div>
-    </div>
-    <div class="fetched-tasks">
-        <input type="checkbox" id="actual-id-from-db" name="task_id" value="actual-id-from-db"
-            class="per-task-checkbox">
-        <div class="per-task-details">
-            <h3>some task details Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, dolorum.</h3>
-            <h5>🗓️ MAY 15, 2024</h5>
-        </div>
-        <div class="per-task-category cleaning">
-            <p>Cleaning</p>
-        </div>
-    </div>
-    <div class="fetched-tasks">
-        <input type="checkbox" id="actual-id-from-db" name="task_id" value="actual-id-from-db"
-            class="per-task-checkbox">
-        <div class="per-task-details">
-            <h3>some task details Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, dolorum.</h3>
-            <h5>🗓️ MAY 15, 2024</h5>
-        </div>
-        <div class="per-task-category other">
-            <p>Other</p>
-        </div>
-    </div>
-</form>
+    
+    <% for(task of finalData) { %>
 
-<script>
-    const datePicker = document.getElementById('duedate-input');
-    datePicker.addEventListener('click', () => {
-        console.log('Click event triggered!')
-        this.focus();
-    });
-</script>
+        <div class="fetched-tasks">
+            <input type="checkbox" id="<%= task.id %>" name="task_id" value="<%= task.id %>"
+                class="per-task-checkbox">
+            <div class="per-task-details">
+                <h3><%= task.description %></h3>
+                <h5>🗓️ <%= task.duedate %></h5>
+            </div>
+            <div class="per-task-category <%= task.category %>">
+                <p><%= task.category %></p>
+            </div>
+        </div>
+
+    <% }%>
+
+</form>

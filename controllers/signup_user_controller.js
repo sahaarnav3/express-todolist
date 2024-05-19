@@ -30,7 +30,7 @@ module.exports.createNewUser = async (req, res, done) => {
         }
         return res.redirect('/create-user');
     }
-    console.log(userData);
+    // console.log(userData);
     res.redirect('/');
 }
 

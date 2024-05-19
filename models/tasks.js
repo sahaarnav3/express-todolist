@@ -13,7 +13,10 @@ const tasksSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    duedate: Date
+    duedate: {
+        type: Date,
+        required: true
+    }
 })
 
 const Tasks = mongoose.model('Tasks', tasksSchema);

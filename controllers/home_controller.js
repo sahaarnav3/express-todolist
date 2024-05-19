@@ -1,5 +1,5 @@
 module.exports.home = (req, res) => {
-    console.log(req.isAuthenticated());
+    // console.log(req.isAuthenticated());
     if(req.isAuthenticated())
         return res.redirect('/profile-tasks');
     res.render('home');

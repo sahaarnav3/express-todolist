@@ -189,22 +189,22 @@
     font-weight: 600;
 }
 
-.personal {
+.Personal {
     background-color: rgb(89, 1, 89);
 }
 
-.work {
+.Work {
     background-color: rgb(3, 36, 145);
 }
 
-.school {
+.School {
     background-color: rgb(125, 1, 28);
 }
 
-.cleaning {
+.Cleaning {
     background-color: rgb(0, 92, 3);
 }
 
-.other {
+.Other {
     background-color: rgb(70, 36, 14);
 }
