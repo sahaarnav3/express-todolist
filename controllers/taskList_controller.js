@@ -1,5 +1,7 @@
 const Tasks = require('../models/tasks');
 
+
+//This function is used to change the format of date after it is fetched from the database.
 const dueDateChanger = (duedate) => {
     return duedate.toLocaleDateString('en-US', {
         year: 'numeric',
@@ -8,21 +10,17 @@ const dueDateChanger = (duedate) => {
     });
 }
 
+
+//This conttroller is used to fetch all the tasks and pass it to the ejs file.
 module.exports.taskList = async (req, res) => {
-    // console.log(req.user);
-    // res.json(res.user);
-    // res.send("this is your task list page after login..");
+
     if (!req.isAuthenticated())
         return res.redirect('/');
 
     let fetchedTasks = await Tasks.find({ email: req.user.email });
-    // console.log(fetchedTasks); 
     let finalData = [];
     fetchedTasks.forEach((task) => {
-        // console.log(task);
-        // finalData[task["_id"]] = task;
         let { id, email, description, category, duedate } = task;
-        // console.log(id);
         duedate = dueDateChanger(duedate);
         finalData.push({ id, description, category, duedate });
     })
@@ -30,6 +28,7 @@ module.exports.taskList = async (req, res) => {
     res.render('task_list', { email: req.user.email, finalData: finalData });
 }
 
+//This controller is used to actually create a task and persist is in the mongoDB collection. This works with the post request.
 module.exports.createTask = async (req, res) => {
     // date = date ? new Date(date) : new Date();
     // console.log(req.body, req.user.email);
@@ -49,6 +48,7 @@ module.exports.createTask = async (req, res) => {
     res.redirect('/profile-tasks');
 }
 
+//This controller is used to delete single or multiple tasks together from the mongoDB collection. It works with a post request.
 module.exports.deleteTask = async (req, res) => {
     if (!req.isAuthenticated())
         return res.redirect('/');

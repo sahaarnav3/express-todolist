@@ -3,6 +3,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 require('dotenv').config();
 const expressLayouts = require('express-ejs-layouts');
+
 const db = require('./config/mongoose');
 const session = require('express-session');
 const passport = require('passport');
@@ -19,23 +20,14 @@ app.use(session({
     saveUninitialized: false,
     cookie: {
         maxAge: (1000 * 60 * 100) // 100 minutes
-    },
-    // store: new MongoStore(
-    //     {
-    //         mongooseConnection: db,
-    //         autoRemove: 'enabled'
-    //     },
-    //     function(err) {
-    //         console.log(err || 'connect-mongodb setup ok');
-    //     }
-    // )
+    }
 }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
 
 
-//extract styles and jacasvript from the sub-pages into layouts
+//extract styles and javascript from the sub-pages into layouts
 app.set('layout extractStyles', true);
 app.set('layout extractScript', true);
 
