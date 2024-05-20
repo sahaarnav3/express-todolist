@@ -20,4 +20,4 @@ This is main home page that will show up after a user logs in. As you see there 
 
 The buttons are self explanatory, add task will add the task to the list. You can delete single or multiple tasks at once. You just need to select the respective tasks that you want deleted and then press delete button. And thirdly the end session button is for logging the user out of the app; the defualt cookie age currently is around 100 minutes.
 
-#THANK YOU :-)
+# THANK YOU :-)
